@@ -20,8 +20,8 @@ ui <- dashboardPage(
             menuItem("Interactive Plot", tabName = "Time_series", icon = icon("dashboard")),
             menuItem("Analysis", tabName = "Analysis", icon = icon("chart-bar"),
                      startExpanded = TRUE,
-                     menuSubItem("By a",tabName = "a"),
-                     menuSubItem("By b",tabName = "b")),
+                     menuSubItem("By Age/Sex",tabName = "a"),
+                     menuSubItem("By Race",tabName = "b")),
             menuItem("About", tabName="About", icon = icon("list-alt"))
         )
     ),
@@ -32,7 +32,7 @@ ui <- dashboardPage(
             # Home tab content
             tabItem(tabName = "Home",
                     fluidPage(
-                        h2(strong("How Covid-19 Has Impacted New York City"),align = "center"),
+                        h2(strong("How Covid-19 Has Impacted New York City and People's Lives"),align = "center"),
                         h3("Wanxin Wang, Ziyi Wang, Mingyuan Xia, Jee sun Yun",align = "center",style="color:gray"),
                         h4("2021Fall GR5243 Project2 Group7 - M.A. Statistics at Columbia University",align = "center",style="color:gray"),
                         
@@ -41,15 +41,15 @@ ui <- dashboardPage(
                                  h3("Covid-19’s waves of destruction have inflicted their own kind of despair on humanity in the 21st century, leaving many to wonder when the pandemic will end. 
                                  Our lives have changed drastically since New York City reported the first COVID-19 cases on March 1,2020. There will be a lot of changes that are substantial and persistent. We won’t look back and say, ‘That was a terrible time, but it’s over.’ 
                                  We will be dealing with many of the ramifications of Covid-19 for decades. 
-                                 New York State has the highest numbers of confirmed cases in the United States till mid-July and most cases were in New York City where half of the population lives.",align = "left"),
+                                 New York State has the highest numbers of confirmed cases in the United States till mid-July and most cases were in New York City where half of the population lives.", style="color:black", align = "left"),
                                  br(),
                                  h3("In effort to stop the pandemic, the U.S. Department of Health & Human Services expedited the vaccine development program with Operation Warp Speed.
                                     However, we are living in the Covid-19 era, not the Covid-19 crisis. Especially in the months before the Delta variant became dominant, the pandemic seemed like it should be nearly over. It may not be over even when physical disease, measured in illness and mortality, has greatly subsided. 
                                     It may continue as the economy recovers and life returns to a semblance of normality.", style="color:black",align = "Left"),
                                  br(),
-                                 style = "background-image: url('https://www.beneschlaw.com/images/content/1/4/v1/14735/NewYork-1100x900.jpg');
+                                 style = "background-image: url('https://cdn2.newsok.biz/cache/large960_blur-bf4f0d8c2bad316af28263a71c41e742.jpg');
                                     background-repeat:no-repeat;background-size:cover;
-                                      opacity: 0.9;
+                                      opacity: 0.8;
                                     background-position:center;"
                         ),
                         
@@ -59,19 +59,19 @@ ui <- dashboardPage(
                                           br(),
                                           a(href="https://www1.nyc.gov/site/doh/covid/covid-19-vaccine-eligibility.page", "Check Eligibility",target="_blank"),style="text-align:center;color:black")),
                                  
-                                 box(width = 5, height = "10%", h2(strong("NYC xxx App"),align = "center"),
+                                 box(width = 5, height = "10%", h2(strong("NYC Covid Updates, Resources, and Amenities Location App"),align = "center"),
                                      background = "blue",
-                                     h4("Welcome to our xxx App,
-                            We want to provide New Yorkers with updated COVID-19 information and analyze how it has impacted xxx"),
+                                     h4("Welcome to our App,
+                            We want to provide New Yorkers with updated COVID-19 information and analyze how it has impacted people's lives and social environments"),
                                      br(),
                                      tags$div(
-                                         "1. Click the Map tab to understand the COVID situation in your target area", 
+                                         "1. Click the Map tab to understand the precautions in your target area, including free meal locations, testing sites, and open parks", 
                                          tags$br(),
                                          tags$br(),
-                                         "2. Click the Interactive Plot tab to see how Covid cases change with respect to time and locatoin in NYC",
+                                         "2. Click the Interactive Plot tab to see how Covid cases change with respect to locatoin in NYC",
                                          tags$br(),
                                          tags$br(),
-                                         "3. Click the analysis tab to deep dive into the data by xxxxx"
+                                         "3. Click the analysis tab to deep dive into the data by age/sex, and race."
                                      ) ),
                         ),
                         
