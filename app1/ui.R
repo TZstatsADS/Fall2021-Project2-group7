@@ -17,7 +17,7 @@ ui <- dashboardPage(
         sidebarMenu(
             menuItem("Home", tabName = "Home", icon = icon("home")),
             menuItem("Map", tabName = "map", icon = icon("map")),
-            menuItem("Interactive Plot", tabName = "Time_series", icon = icon("dashboard")),
+            menuItem("Interactive Plot", tabName = "Interac_plot", icon = icon("dashboard")),
             menuItem("Analysis", tabName = "Analysis", icon = icon("chart-bar"),
                      startExpanded = TRUE,
                      menuSubItem("By Age/Sex",tabName = "a"),
@@ -108,7 +108,58 @@ ui <- dashboardPage(
                     mainPanel(width=12, h2(strong("Code"), align="center"),
                               h4("More detailed codes are shared at", a("Github", 
                                                                         href="https://github.com/TZstatsADS/Fall2021-Project2-group7"), ". ", align="center"))
-            )
+            ),
+            
+            tabItem(tabName = "Interac_plot",
+                    box(width=5,
+                        h4("The bar chart below shows that Brooklyn and Queens have the most positive antibody cases."),
+                        h4("Please click on the select box to see more specific distribution by borough."),
+                        br(),
+                        
+                        # sidebarPanel(width = 2.5,
+                        #              selectInput("count","Please Select Count Type",
+                        #                          choices=c("case count","test count","percent positive", "test rate")),
+                        #              
+                        # ),
+                        
+                        # mainPanel(
+                        #     plotlyOutput(width = "150%", "int_Plot")
+                        # )
+                        
+                        fluidPage(
+                            sidebarLayout(
+                                sidebarPanel(
+                                    
+                                    selectInput("count", 
+                                                label = "Antibody by Borough in Bar Plot",
+                                                choices = c("Number of Positive People" = 1,
+                                                            "Number of People Tested" = 2,  
+                                                            "Percentage of Positive Cases" = 3,
+                                                            "Test Rate" = 4), 
+                                                selected = "Number of Positive People")),
+                                mainPanel(
+                                    plotlyOutput("bar_plt")
+                                ))
+                        )
+                        
+                        ),
+                    
+                    box(
+                        width=7,
+                        h4("Please click on the select box to see more specific distribution of positive antibody tests number & rate."),
+                        br(),
+                        
+                        mainPanel(
+                            fluidRow(
+                                tabsetPanel(id = "tpanel",
+                                            type = "tabs",
+                                            tabPanel("number of test positive", plotlyOutput("plot1")),
+                                            tabPanel("percent of test positive", plotlyOutput("plot2")))
+                            )
+                        ))
+                    )
+            
+            
             
 
 )
