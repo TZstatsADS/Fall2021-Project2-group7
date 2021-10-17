@@ -1,13 +1,14 @@
 library(shiny)
 library(tidyverse)
 library(plotly)
-
+library(leaflet)
 
 anti_by_boro <- read_csv("../data/anti-by-boro.csv")
 row.names(anti_by_boro) <- c("Bronx", "Brooklyn", "Manhattan", "Queens", "Staten Island")
 
 
 ui <- fluidPage(
+  tabPanel("Interactive Plot Test",
   sidebarLayout(
     sidebarPanel(
 
@@ -18,9 +19,24 @@ ui <- fluidPage(
                                      "Percentage of Positive Cases" = 3,
                                      "Test Rate" = 4), 
                       selected = "Number of Positive People")),
-          mainPanel(
+          
+    
+    
+    
+    mainPanel(
             plotlyOutput("bar_plt")
-          ))
+          ))),
+  tabPanel("Map Test",
+           leafletOutput("nycmap"),
+           
+           absolutePanel(id= "control",
+                         draggable = FALSE, height = "auto",
+                         h3("NYC MAP", align = "left"),
+                         selectInput("plot_zip", label = NULL,
+                                     choices = list("10001", "10018", "10036", "test"))
+                         checkboxInput()
+                         )
+  )
 )
 
 
