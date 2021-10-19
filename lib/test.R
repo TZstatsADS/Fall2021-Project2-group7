@@ -34,7 +34,8 @@ ui <- fluidPage(
                          h3("NYC MAP", align = "left"),
                          selectInput("plot_zip", label = NULL,
                                      choices = list("10001", "10018", "10036", "test"))
-                         checkboxInput()
+                         h4("NYC Parks", align = "left"),
+                         selectInput("parks")
                          )
   )
 )
