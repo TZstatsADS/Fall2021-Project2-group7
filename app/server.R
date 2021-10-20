@@ -238,12 +238,12 @@ shinyServer(function(input, output) {
     
     
     #Covid Test data#
-    df <- readRDS(file="../data/processed_data.Rda") 
+    df <- readr::read_rds(file="../data/processed_data.rda") 
     df = df[df$category == 'covid testing site', ]
     df = df[df$open_now == 'Open'|df$open_now == 'Closed', ]
 
     #Free Meals data#
-    free_meals = read.csv("../data/COVID-19_Free_Meals_Locations.csv")    
+    free_meals = read.csv("../data/free_meals_locations.csv")    
     
     
     #Seasonal Flu Vaccine data#
@@ -262,7 +262,7 @@ shinyServer(function(input, output) {
         # clear the map
         leafletProxy("mymap", data = df) %>%
             clearShapes() %>%
-            clearMarkers() %>%
+               clearMarkers() %>%
             addProviderTiles("CartoDB.Voyager") %>%
             fitBounds(-74.354598, 40.919500, -73.761545, 40.520024)
         
@@ -272,11 +272,11 @@ shinyServer(function(input, output) {
                 addCircleMarkers(~lon, ~lat, radius=10,
                                  color = ~color1(open_now),
                                  label = paste(df$formatted_address, ', ', df$name),
-                                 popup = paste(
+                                  popup = paste(
                                      "<b>Name:</b>", df$name, "<br>",
                                      "<b>Address:</b>", df$formatted_address, "<br>",
                                      "<b>Rating:</b>", df$rating, "<br>",
-                                     "<b>Open now:</b>", df$open_now, "<br>")) %>%
+                                      "<b>Open now:</b>", df$open_now, "<br>")) %>%
                 addLegend("bottomright",
                           pal = color1,
                           values = df$open_now,
@@ -347,13 +347,13 @@ shinyServer(function(input, output) {
         
   
     # parks data
-    adult_exer_equip <- readr::read_csv("../data/AdultExerciseEquip_clean.csv")
-    playgrounds <- readr::read_csv("../data/Playgrounds_clean.csv")
+    adult_exer_equip <- readr::read_csv("../data/adultexerciseequip_clean.csv")
+    playgrounds <- readr::read_csv("../data/playgrounds_clean.csv")
 
     
-    ath_facilities_geo <- geojsonio::geojson_read("../data/AtheleticFac_geo_clean.geojson", what ="sp")
-    dog_runs_geo <- geojsonio::geojson_read("../data/DogRuns_geo_clean.geojson", what ="sp")
-    skate_parks_geo <- geojsonio::geojson_read("../data/SkateParks_geo_clean.geojson", what ="sp")
+    ath_facilities_geo <- geojsonio::geojson_read("../data/atheleticfac_geo_clean.geojson", what ="sp")
+    dog_runs_geo <- geojsonio::geojson_read("../data/dogruns_geo_clean.geojson", what ="sp")
+    skate_parks_geo <- geojsonio::geojson_read("../data/skateparks_geo_clean.geojson", what ="sp")
     
     
     #adult exercise button
@@ -463,7 +463,7 @@ shinyServer(function(input, output) {
         if(input$atheleticfac ==6){
             leafletProxy("mymap", data = volleyball) %>%
                 addAwesomeMarkers(~longitude, ~latitude,
-                                  icon = awesomeIcons(markerColor = "lightgreen",
+                                  icon = awesomeIcons(markerColor = "purple",
                                                       text = fa("volleyball-ball")),
                                   label = ~name, popup = ~content)
         }

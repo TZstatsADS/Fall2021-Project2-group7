@@ -106,11 +106,11 @@ dog_runs_geo <- get_poly(dog_runs_geo)
 ath_facilities_geo <- get_poly(ath_facilities_geo)
 
 
-write.csv(adult_exer_equip, file = here::here("data", "AdultExerciseEquip_clean.csv"),row.names=FALSE)
-write.csv(playgrounds, file = here::here("data", "Playgrounds_clean.csv"),row.names=FALSE)
+write.csv(adult_exer_equip, file = here::here("data", "adultexerciseequip_clean.csv"),row.names=FALSE)
+write.csv(playgrounds, file = here::here("data", "playgrounds_clean.csv"),row.names=FALSE)
 geojson_write(input=dog_runs_geo, lat='latitude', lon='longitude',
-            geometry='polygons', file=here::here("data", "DogRuns_geo_clean.geojson"))
+            geometry='polygons', file=here::here("data", "dogruns_geo_clean.geojson"))
 geojson_write(input=skate_parks_geo, lat='latitude', lon='longitude',
-           geometry='polygons', file=here::here("data", "SkateParks_geo_clean.geojson"))
+           geometry='polygons', file=here::here("data", "skateparks_geo_clean.geojson"))
 geojson_write(input=ath_facilities_geo, lat='latitude', lon='longitude',
-             geometry='polygons', file=here::here("data", "AtheleticFac_geo_clean.geojson"))
+             geometry='polygons', file=here::here("data", "atheleticfac_geo_clean.geojson"))
