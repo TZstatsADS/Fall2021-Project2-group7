@@ -1,0 +1,137 @@
+District,SFCode,BldgCode,SchoolName,SiteAddress,City,Zip,Accessibility,Longitude,Latitude,KosherMealType
+4,04146,M146,P.S. 146 Ann M. Short,421 EAST 106 STREET,Manhattan,10029,Partially Accessible,-73.938727,40.789535,non-kosher
+6,06278,M918,Paula Hedbavny School,421 W 219TH ST,Manhattan,10034,Partially Accessible,-73.912339,40.871673,non-kosher
+17,17546,K470,High School for Public Service: Heroes of Tomorrow,600 KINGSTON AVENUE,Brooklyn,11203,No Accessibility,-73.943839,40.658671,non-kosher
+14,14318,K318,I.S. 318 Eugenio Maria De Hostos,101 WALTON STREET,Brooklyn,11206,Partially Accessible,-73.948771,40.703034,non-kosher
+17,17138,K138,P.S. 138 Brooklyn,760 PROSPECT PLACE,Brooklyn,11216,Partially Accessible,-73.951559,40.673943,non-kosher
+13,13256,K256,P.S. 256 Benjamin Banneker,114 KOSCIUSZKO STREET,Brooklyn,11216,No Accessibility,-73.94961,40.690595,non-kosher
+2,02198,M198,P.S. 198 Isador E. Ida Straus,1700 3 AVENUE,Manhattan,10128,No Accessibility,-73.95042,40.785018,non-kosher
+32,32376,K376,P.S. 376,194 HARMAN STREET,Brooklyn,11237,No Accessibility,-73.920187,40.69805,non-kosher
+20,20220,K220,I.S. 220,4812 9TH AVENUE,Brooklyn,11220,No Accessibility,-74.00125,40.640997,kosher
+25,25509,Q460,Flushing High School,35-01 UNION STREET,Queens,11354,No Accessibility,-73.826811,40.764892,non-kosher
+7,07005,X005,PS 5 Port Morris,564 JACKSON AVENUE,Bronx,10455,No Accessibility,-73.908358,40.813896,non-kosher
+2,02427,M620,MANHATTAN ACADEMY FOR ARTS & LANGUAGE,111 EAST  33RD STREET,Manhattan,10016,Partially Accessible,-73.98107,40.74651,non-kosher
+22,22527,K425,JAMES MADISON HS,3787 BEDFORD AVENUE,Brooklyn,11229,Partially Accessible,-73.947661,40.610499,kosher
+12,12536,X879,Wings Academy,1122 EAST 180 STREET,Bronx,10460,Fully Accessible,-73.875262,40.841376,non-kosher
+6,06189,M189,P.S. 189,2580 AMSTERDAM AVENUE,Manhattan,10040,Partially Accessible,-73.928048,40.853045,non-kosher
+20,20030,K331,I.S. 30 Mary White Ovington,7002 4TH AVENUE,Brooklyn,11209,Fully Accessible,-74.02395,40.633598,non-kosher
+2,02868,M131,M.S. 131,100 HESTER STREET,Manhattan,10002,Fully Accessible,-73.993607,40.716231,non-kosher
+5,05036,M036,P.S. 036 Margaret Douglas,123 MORNINGSIDE DRIVE,Manhattan,10027,No Accessibility,-73.957409,40.810705,non-kosher
+14,14016,K016,P.S. 16,157 WILSON STREET,Brooklyn,11211,No Accessibility,-73.962049,40.706069,kosher
+22,22078,K078,J.H.S. 078 Roy H. Mann,1420 EAST  68 STREET,Brooklyn,11234,No Accessibility,-73.912914,40.620537,non-kosher
+30,30533,Q445,William Cullen Bryant High School,48-10 31 AVENUE,Queens,11103,No Accessibility,-73.911165,40.757072,non-kosher
+19,19346,K346,P.S. 346 Abe Stark,1400 PENNSYLVANIA AVENUE,Brooklyn,11239,Partially Accessible,-73.881997,40.64664,non-kosher
+11,11175,X175,P.S. 175 City Island,200 CITY ISLAND AVENUE,Bronx,10464,No Accessibility,-73.78354,40.844353,non-kosher
+9,09294,X064,The Walton Avenue School,1425 WALTON AVENUE,Bronx,10452,No Accessibility,-73.915879,40.8404,non-kosher
+8,08123,X123,J.H.S. 123 James M. Kieran,1025 MORRISON AVENUE,Bronx,10472,No Accessibility,-73.874162,40.824989,non-kosher
+22,22234,K234,J.H.S. 234 Arthur W. Cunningham,1875 EAST  17 STREET,Brooklyn,11229,Partially Accessible,-73.955217,40.604447,non-kosher
+1,01632,M056,University Neighborhood Middle School,220 HENRY STREET,Manhattan,10002,Partially Accessible,-73.986051,40.713362,non-kosher
+6,06646,M814,Community Health Academy of the Heights,504 WEST 158TH STREET,Manhattan,10032,Fully Accessible,-73.942074,40.833695,non-kosher
+6,06322,M218,Middle School 322,4600 BROADWAY,Manhattan,10040,Fully Accessible,-73.930082,40.860951,non-kosher
+2,02130,M130,P.S. 130 Hernando De Soto,143 BAXTER STREET,Manhattan,10013,Fully Accessible,-73.998326,40.71866,non-kosher
+23,23193,K055,Brooklyn Collegiate: A College Board School,2021 BERGEN STREET,Brooklyn,11233,Partially Accessible,-73.912685,40.674456,non-kosher
+3,03511,M485,Fiorello H. LaGuardia High School of Music & Art and Performing Arts,100 AMSTERDAM AVENUE,Manhattan,10023,Partially Accessible,-73.985976,40.774202,non-kosher
+10,10382,X079,"Elementary School for Math, Science, and Technology",125 EAST 181 STREET,Bronx,10453,Fully Accessible,-73.903139,40.855337,non-kosher
+2,02124,M124,P.S. 124 Yung Wing,40 DIVISION STREET,Manhattan,10002,Partially Accessible,-73.996017,40.715097,non-kosher
+6,06115,M115,P.S. 115 Alexander Humboldt,586 WEST 177 STREET,Manhattan,10033,No Accessibility,-73.93514,40.846116,non-kosher
+19,19292,K292,J.H.S. 292 Margaret S. Douglas,301 VERMONT STREET,Brooklyn,11207,No Accessibility,-73.893319,40.671601,non-kosher
+17,17221,K221,P.S. 221,791 EMPIRE BOULEVARD,Brooklyn,11213,No Accessibility,-73.935753,40.663964,kosher
+17,17006,K006,P.S. 006,43 SNYDER AVENUE,Brooklyn,11226,Fully Accessible,-73.956279,40.648973,non-kosher
+14,14250,K250,P.S. 250 George H. Lindsay,108 MONTROSE AVENUE,Brooklyn,11206,No Accessibility,-73.945659,40.706708,non-kosher
+27,27062,Q062,P.S. 062 Chester Park,97-25 108 STREET,Queens,11419,Fully Accessible,-73.835567,40.688359,non-kosher
+27,27137,Q137,M.S. 137 America's School of Heroes,109-15 98 STREET,Queens,11417,Fully Accessible,-73.839377,40.678112,non-kosher
+31,31022,R022,P.S. 022 Graniteville,1860 FOREST AVENUE,Staten Island,10303,No Accessibility,-74.150544,40.624847,non-kosher
+27,27100,Q100,P.S. 100 Glen Morris,111-11 118 Street,Queens,11420,Fully Accessible,-73.821545,40.679694,non-kosher
+30,30111,Q111,P.S. 111 Jacob Blackwell,37-15 13 STREET,Queens,11101,No Accessibility,-73.939181,40.758342,non-kosher
+1,01585,M025,Lower East Side Preparatory High Sch,145 STANTON STREET,Manhattan,10002,Partially Accessible,-73.986038,40.72004,non-kosher
+13,13067,K067,P.S. 067 Charles A. Dorsey,51 SAINT EDWARDS STREET,Brooklyn,11205,No Accessibility,-73.977674,40.695339,non-kosher
+30,30151,Q151,P.S. 151 Mary D. Carter,50-05 31 AVENUE,Queens,11377,No Accessibility,-73.908146,40.758027,non-kosher
+2,02002,M002,P.S. 002 Meyer London,122 Henry Street,Manhattan,10002,Partially Accessible,-73.991523,40.712907,non-kosher
+10,10265,X368,In-Tech Academy (M.S. / High School 368),2975 TIBBETT AVENUE,Bronx,10463,Fully Accessible,-73.913694,40.877935,non-kosher
+5,05543,M970,Thurgood Marshall Academy for Learning and Social,200-214 WEST 135TH STREET,Manhattan,10030,Fully Accessible,-73.944299,40.815237,non-kosher
+10,10306,X306,P.S. 306,40 WEST TREMONT AVENUE,Bronx,10453,Fully Accessible,-73.910827,40.850722,non-kosher
+10,10524,X660,Crotona International High School,2474 CROTONA AVENUE,Bronx,10458,Partially Accessible,-73.882487,40.855392,non-kosher
+5,05010,M010,Frederick Douglass Academy,2581 7TH AVENUE,Manhattan,10039,Partially Accessible,-73.935746,40.823988,non-kosher
+12,12129,X129,M.S.129 Academy for Independent Learning and Leadership,2055 MAPES AVENUE,Bronx,10460,Partially Accessible,-73.886721,40.846128,non-kosher
+2,02513,M480,Urban Academy Laboratory High School,317 EAST  67 STREET,Manhattan,10065,Partially Accessible,-73.959777,40.765638,non-kosher
+1,01643,M445,New Design High School,350 GRAND STREET,Manhattan,10002,No Accessibility,-73.989329,40.717329,non-kosher
+12,12563,X420,High School of World Cultures,1300 BOYNTON AVENUE,Bronx,10472,Partially Accessible,-73.878191,40.832508,non-kosher
+6,06143,M143,J.H.S. 143 Eleanor Roosevelt,511 WEST 182ND STREET,Manhattan,10033,Partially Accessible,-73.930991,40.849311,non-kosher
+4,04555,M013,Central Park East High School,1573 MADISON AVENUE,Manhattan,10029,No Accessibility,-73.948488,40.793649,non-kosher
+12,12579,X158,BRONX CAREER AND COLLEGE PREPARATORY HIGH SCHOOL,800 HOME STREET,Bronx,10456,Fully Accessible,-73.900593,40.826933,non-kosher
+4,04072,M072,The Lexington Academy,131 EAST 104 STREET,Manhattan,10029,No Accessibility,-73.94745,40.791444,non-kosher
+8,08131,X131,J.H.S. 131 Albert Einstein,885 Bolton Avenue,Bronx,10473,Partially Accessible,-73.859998,40.822925,non-kosher
+6,06128,M128,P.S. 128 Audubon,560 WEST 169 STREET,Manhattan,10032,Partially Accessible,-73.938701,40.841032,non-kosher
+6,06052,M052,J.H.S. 052 Inwood,650 ACADEMY STREET,Manhattan,10034,No Accessibility,-73.925464,40.865556,non-kosher
+3,03163,M163,P.S. 163 Alfred E. Smith,163 WEST  97 STREET,Manhattan,10025,No Accessibility,-73.96847,40.795163,non-kosher
+17,17210,K210,M.S. K394,188 ROCHESTER AVENUE,Brooklyn,11213,No Accessibility,-73.928917,40.67271,non-kosher
+3,03301,M144,P.S. 242 - The Young Diplomats Magnet Academy,134 WEST 122 STREET,Manhattan,10027,Partially Accessible,-73.948385,40.806055,non-kosher
+2,02217,M271,P.S./I.S. 217 Roosevelt Island,645 MAIN STREET,Manhattan,10044,Fully Accessible,-73.956435,40.753598,non-kosher
+14,14050,K050,J.H.S. 050 John D. Wells,183 SOUTH  3 STREET,Brooklyn,11211,No Accessibility,-73.960137,40.711915,non-kosher
+3,03402,M470,THE URBAN ASSEMBLY SCHOOL FOR GREEN CAREERS,145 WEST  84 STREET,Manhattan,10024,Fully Accessible,-73.974483,40.786134,non-kosher
+11,11127,X127,J.H.S. 127 The Castle Hill,1560 PURDY STREET,Bronx,10462,Partially Accessible,-73.853203,40.838759,non-kosher
+5,05030,M030,P.S. 030 Hernandez/Hughes,144-176 EAST 128 STREET,Manhattan,10035,Partially Accessible,-73.935461,40.805653,non-kosher
+3,03145,M145,"P.S. 145, The Bloomingdale School",150 WEST 105 STREET,Manhattan,10025,No Accessibility,-73.965611,40.799098,non-kosher
+6,06153,M153,P.S. 153 Adam Clayton Powell,1750 AMSTERDAM AVENUE,Manhattan,10031,Partially Accessible,-73.947599,40.826514,non-kosher
+2,02479,M912,Beacon High School,521 WEST 43RD STREET,Manhattan,10036,Fully Accessible,,,non-kosher
+8,08036,X036,P.S. 036 Unionport,1070 Castle Hill Avenue,Bronx,10472,Fully Accessible,-73.849791,40.82948,non-kosher
+25,25189,Q189,J.H.S. 189 Daniel Carter Beard,144-80 BARCLAY AVENUE,Queens,11355,No Accessibility,-73.818399,40.759963,non-kosher
+24,24019,Q019,P.S. 019 Marino Jeantet,98-02 ROOSEVELT AVENUE,Queens,11368,Fully Accessible,-73.866557,40.7486,non-kosher
+6,06048,M048,P.S. 48,4360-78 BROADWAY,Manhattan,10033,Fully Accessible,-73.933629,40.853193,kosher
+10,10024,X024,P.S. 24,660 WEST 236 STREET,Bronx,10463,No Accessibility,-73.915114,40.886922,kosher
+1,01142,M142,P.S. 142 Amalia Castro,100 ATTORNEY STREET,Manhattan,10002,Partially Accessible,-73.984116,40.718121,non-kosher
+9,09117,X117,I.S. 117 Joseph H. Wade,1865 MORRIS AVENUE,Bronx,10453,No Accessibility,-73.909022,40.848552,non-kosher
+18,18635,K242,PS 235 Janice Marie Knight School Annex,10001 FLATLANDS AVENUE,Brooklyn,11236,No Accessibility,-73.940922,40.655337,non-kosher
+24,24293,Q744,Civic Leadership Academy,45-10 94TH STREET,Queens,11373,Fully Accessible,-73.871505,40.743228,non-kosher
+24,24061,Q061,I.S. 061 Leonardo Da Vinci,98-50 50 AVENUE,Queens,11368,Fully Accessible,-73.862886,40.741898,non-kosher
+20,20259,K259,J.H.S. 259 William Mckinley,7305 FT HAMILTON PARKWAY,Brooklyn,11228,Partially Accessible,-74.014633,40.626089,non-kosher
+30,30580,Q520,Middle College High School at LaGuardia Community,45-35 VAN DAM STREET,Queens,11101,Fully Accessible,-73.933316,40.743253,non-kosher
+30,30501,Q404,Academy for Careers in Television and Film,1-50 51ST AVENUE,Queens,11101,Fully Accessible,-73.959183,40.742964,non-kosher
+29,29109,Q109,Jean Nuzzi Intermediate School,213-10 92 AVENUE,Queens,11428,No Accessibility,-73.746375,40.720074,non-kosher
+28,28541,Q620,Thomas A. Edison Career and Technical Education High School,165-65 84 AVENUE,Queens,11432,Partially Accessible,-73.799692,40.716071,non-kosher
+22,22889,K338,PS 889,21 HINCKLEY PLACE,Brooklyn,11218,Fully Accessible,,,non-kosher
+31,31002,R002,I.S. R002 George L. Egbert,333 MIDLAND AVENUE,Staten Island,10306,No Accessibility,-74.099685,40.576728,non-kosher
+30,30149,Q149,P.S. 149 Christa Mcauliffe,93-11 34 AVENUE,Queens,11372,Partially Accessible,-73.874505,40.755759,non-kosher
+30,30126,Q126,Albert Shanker School for Visual and Performing Arts,31-51 21 STREET,Queens,11106,No Accessibility,-73.92999,40.766008,non-kosher
+30,30234,Q234,P.S. 234,30-15 29 STREET,Queens,11102,Fully Accessible,-73.923044,40.766898,non-kosher
+19,19654,K166,Van Siclen Community Middle School,800 VAN SICLEN AVE,Brooklyn,11207,Fully Accessible,-73.885704,40.659934,non-kosher
+24,24515,Q485,Grover Cleveland High School,21-27 HIMROD STREET,Queens,11385,Partially Accessible,-73.909202,40.711881,non-kosher
+27,27043,Q043,P.S. 043,160 BEACH  29 STREET,Queens,11691,Fully Accessible,-73.761086,40.59348,non-kosher
+30,30212,Q212,P.S. 212,34-25 82 STREET,Queens,11372,Fully Accessible,-73.884458,40.753035,non-kosher
+26,26505,Q415,Benjamin N. Cardozo High School,57-00 223RD STREET,Queens,11364,Partially Accessible,-73.757271,40.752343,non-kosher
+26,26503,Q405,Bayside High School,32-24 CORPORAL KENNEDY STREET,Queens,11361,Partially Accessible,-73.781041,40.771398,non-kosher
+28,28190,Q190,J.H.S. 190 Russell Sage,68-17 AUSTIN STREET,Queens,11375,Fully Accessible,-73.8517,40.723478,non-kosher
+21,21531,K400,International HS at Lafayette,2630 BENSON AVENUE,Brooklyn,11214,Partially Accessible,-73.986313,40.593028,non-kosher
+30,30122,Q122,P.S. 122 Mamie Fay,21-21 DITMARS BOULEVARD,Queens,11105,No Accessibility,-73.915785,40.780507,non-kosher
+19,19171,K171,I.S. 171 Abraham Lincoln,528 RIDGEWOOD AVENUE,Brooklyn,11208,No Accessibility,-73.869434,40.685852,non-kosher
+20,20187,K486,The Christa McAuliffe School\I.S. 187,1171 65 STREET,Brooklyn,11219,No Accessibility,-74.003883,40.627929,non-kosher
+30,30166,Q166,P.S. 166 Henry Gradstein,33-09 35 AVENUE,Queens,11106,Partially Accessible,-73.926249,40.757497,non-kosher
+19,19661,K302,Vista Academy,350 LINWOOD STREET,Brooklyn,11208,Partially Accessible,-73.884211,40.677112,non-kosher
+19,19218,K218,J.H.S. 218 James P. Sinnott,370 FOUNTAIN AVENUE,Brooklyn,11208,No Accessibility,-73.874537,40.67002,non-kosher
+21,21228,K228,I.S. 228 David A. Boody,228 AVENUE S,Brooklyn,11223,Partially Accessible,-73.976801,40.60066,non-kosher
+21,21288,K288,P.S. 288 The Shirley Tanyhill,2950 WEST  25 STREET,Brooklyn,11224,No Accessibility,-73.992393,40.574029,non-kosher
+30,30152,Q152,Q152 - P.S. 152 Gwendoline N. Alleyne School,33-52 62 STREET,Queens,11377,Partially Accessible,-73.900584,40.753094,non-kosher
+23,23518,K275,Kappa V,985 ROCKAWAY AVENUE,Brooklyn,11212,Fully Accessible,-73.906662,40.655644,non-kosher
+30,30329,Q329,East Elmhurst Community School,26-25 97TH STREET,Queens,11369,No Accessibility,-73.872244,40.761573,non-kosher
+24,24005,Q005,I.S. 5 - The Walter Crowley Intermediate School,50-40 JACOBUS STREET,Queens,11373,Fully Accessible,-73.888133,40.737405,non-kosher
+29,29238,Q238,I.S. 238 - Susan B. Anthony Academy,88-15 182 Street,Queens,11423,Fully Accessible,-73.779653,40.712743,non-kosher
+20,20519,K505,FRANKLIN D. ROOSEVELT HS,5800 20 AVENUE,Brooklyn,11204,No Accessibility,-73.982583,40.621299,kosher
+24,24012,Q012,P.S. 012 James B. Colgate,42-00 72 STREET,Queens,11377,Partially Accessible,-73.893466,40.742284,non-kosher
+24,24089,Q089,P.S. 089 Elmhurst,85-28 BRITTON AVENUE,Queens,11373,Partially Accessible,-73.879641,40.745963,non-kosher
+26,26525,Q435,Martin Van Buren High School,230-17 HILLSIDE AVENUE,Queens,11427,Partially Accessible,-73.739726,40.733888,non-kosher
+24,24007,Q007,P.S. 007 Louis F. Simeone,80-55 CORNISH AVENUE,Queens,11373,Fully Accessible,-73.882446,40.739644,non-kosher
+25,25021,Q021,P.S. 021 Edward Hart,147-36 26 AVENUE,Queens,11354,Partially Accessible,-73.818581,40.774134,non-kosher
+24,24049,Q049,P.S. 049 Dorothy Bonawit Kole,63-60 80th Street,Queens,11379,Fully Accessible,-73.875493,40.719567,non-kosher
+28,28217,Q217,J.H.S. 217 Robert A. Van Wyck,85-05 144 STREET,Queens,11435,Partially Accessible,-73.811461,40.710384,non-kosher
+18,18268,K268,P.S. 268 Emma Lazarus,133 EAST  53 STREET,Brooklyn,11203,No Accessibility,-73.92756,40.657421,non-kosher
+24,24239,Q239,P.S. 239,17-15 WEIRFIELD STREET,Queens,11385,Fully Accessible,-73.903838,40.699431,non-kosher
+24,24088,Q088,P.S. 088 Seneca,60-85 CATALPA AVENUE,Queens,11385,Partially Accessible,-73.896437,40.704105,non-kosher
+24,24125,Q125,I.S. 125 Thom J. McCann Woodside,46-02 47 AVENUE,Queens,11377,Fully Accessible,-73.918762,40.740452,non-kosher
+28,28511,Q440,FOREST HILLS HS,67-01 110 STREET,Queens,11375,Partially Accessible,-73.843972,40.730017,kosher
+30,30280,Q280,P.S. 280,34-20 94TH STREET,Queens,11372,No Accessibility,-73.874109,40.753345,non-kosher
+27,27262,Q410,Channel View School for Research,100-00 BEACH CHANNEL DRIVE,Queens,11694,Partially Accessible,-73.825317,40.586012,non-kosher
+31,31018,R018,P.S. 018 John G. Whittier,221 BROADWAY,Staten Island,10310,No Accessibility,-74.116817,40.636521,non-kosher
+19,19214,K214,P.S. 214 Michael Friedsam,2944 PITKIN AVENUE,Brooklyn,11208,No Accessibility,-73.862961,40.675881,non-kosher
+31,31547,R043,JEROME PARKER CAMPUS,100 ESSEX DRIVE,Staten Island,10314,Fully Accessible,-74.159343,40.581958,kosher
+28,28358,Q314,MS 358,88-08 164TH STREET,Queens,11432,Fully Accessible,,,non-kosher
+25,25250,Q168,J.H.S. 168,158-40 76 ROAD,Queens,11366,Fully Accessible,-73.80938,40.724195,kosher
