@@ -263,24 +263,24 @@ shinyServer(function(input, output) {
         leafletProxy("mymap", data = df) %>%
             clearShapes() %>%
                clearMarkers() %>%
-            addProviderTiles("CartoDB.Voyager") %>%
-            fitBounds(-74.354598, 40.919500, -73.761545, 40.520024)
+                 addProviderTiles("CartoDB.Voyager") %>%
+                     fitBounds(-74.354598, 40.919500, -73.761545, 40.520024)
         
         # output data related to covid testing sites
             leafletProxy("mymap", data = df) %>%
                 addProviderTiles("CartoDB.Voyager") %>%
-                addCircleMarkers(~lon, ~lat, radius=10,
+               addCircleMarkers(~lon, ~lat, radius=10,
                                  color = ~color1(open_now),
-                                 label = paste(df$formatted_address, ', ', df$name),
+                               label = paste(df$formatted_address, ', ', df$name),
                                   popup = paste(
-                                     "<b>Name:</b>", df$name, "<br>",
-                                     "<b>Address:</b>", df$formatted_address, "<br>",
+                                    "<b>Name:</b>", df$name, "<br>",
+                                       "<b>Address:</b>", df$formatted_address, "<br>",
                                      "<b>Rating:</b>", df$rating, "<br>",
-                                      "<b>Open now:</b>", df$open_now, "<br>")) %>%
+                                        "<b>Open now:</b>", df$open_now, "<br>")) %>%
                 addLegend("bottomright",
                           pal = color1,
                           values = df$open_now,
-                          title = "Status",
+                          title = "Status",       
                           opacity = 1)
         })
         
@@ -338,7 +338,7 @@ shinyServer(function(input, output) {
         leafletProxy("mymap", data = df_flu) %>%
             addAwesomeMarkers(~Longitude, ~Latitude, 
                               icon = awesomeIcons(markerColor= "red",
-                                                  text = fa("syringe")), label=~Facility.Name,                                  
+                                                  text = fa("syringe")), label= ~Facility.Name,                                  
                               popup = paste(
                                   "<b>Address:</b>", df_flu$Address,", ", df$ZIP.Code,  "<br>",
                                   "<b>Phone:</b>", df_flu$Phone, "<br>",
