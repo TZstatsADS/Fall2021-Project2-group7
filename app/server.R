@@ -19,7 +19,12 @@ library(highcharter)
 if (!require("RColorBrewer")) { install.packages("RColorBrewer")}
 library(RColorBrewer)
 if(!require(fontawesome)) devtools::install_github("rstudio/fontawesome")
-
+if (!require("geojsonio")) { install.packages("geojsonio")}
+library(geojsonio)
+if (!require("readr")) { install.packages("readr")}
+library(readr)
+if (!require("leaflet")) { install.packages("leaflet")}
+library(leaflet)
 
 
 # Define server logic required to draw a histogram
@@ -332,15 +337,182 @@ shinyServer(function(input, output) {
         
         leafletProxy("mymap", data = df_flu) %>%
             addAwesomeMarkers(~Longitude, ~Latitude, 
-                              icon = icon("syringe", lib = "font-awesome"), label=~Facility.Name,                                  
+                              icon = awesomeIcons(markerColor= "red",
+                                                  text = fa("syringe")), label=~Facility.Name,                                  
                               popup = paste(
                                   "<b>Address:</b>", df_flu$Address,", ", df$ZIP.Code,  "<br>",
                                   "<b>Phone:</b>", df_flu$Phone, "<br>",
                                   "<b>Website:</b>", df_flu$Website, "<br>"))
     })        
         
+  
+    # parks data
+    adult_exer_equip <- readr::read_csv("../data/AdultExerciseEquip_clean.csv")
+    playgrounds <- readr::read_csv("../data/Playgrounds_clean.csv")
+
+    
+    ath_facilities_geo <- geojsonio::geojson_read("../data/AtheleticFac_geo_clean.geojson", what ="sp")
+    dog_runs_geo <- geojsonio::geojson_read("../data/DogRuns_geo_clean.geojson", what ="sp")
+    skate_parks_geo <- geojsonio::geojson_read("../data/SkateParks_geo_clean.geojson", what ="sp")
+    
+    
+    #adult exercise button
+    observeEvent(input$adultexerciseequip, {
+        proxy <- leafletProxy("mymap", data = adult_exer_equip)
+        proxy %>% clearControls()
         
+        # clear the map
+        leafletProxy("mymap", data = adult_exer_equip) %>%
+            clearShapes() %>%
+            clearMarkers() %>%
+            addProviderTiles("CartoDB.Voyager") %>%
+            fitBounds(-74.354598, 40.919500, -73.761545, 40.520024)
         
+        leafletProxy("mymap", data = adult_exer_equip) %>%
+            addAwesomeMarkers(~longitude, ~latitude,
+                              icon = awesomeIcons(markerColor = "green",
+                                                  text = fa("dumbbell")),
+                              label = ~SiteName, popup = ~content)
+        })
+    
+    # playgrounds button
+    playgrounds <- playgrounds %>% 
+        dplyr::filter(Status == "Reopened" | Status == "COVID-19 Closure")
+ 
+    observeEvent(input$playgrounds, {
+        proxy <- leafletProxy("mymap", data = playgrounds)
+        palette_testing = c("red", "green")
+        color1 <- colorFactor(palette=palette_testing, playgrounds$Status)
+        
+        proxy %>% clearControls()
+        
+        # clear the map
+        leafletProxy("mymap", data = playgrounds) %>%
+            clearShapes() %>%
+            clearMarkers() %>%
+            addProviderTiles("CartoDB.Voyager") %>%
+            fitBounds(-74.354598, 40.919500, -73.761545, 40.520024)
+        
+        leafletProxy("mymap", data = playgrounds) %>%
+            addProviderTiles("CartoDB.Voyager") %>%
+            addCircleMarkers(~longitude, ~latitude,
+                              color = ~color1(Status), radius = 3,
+                              label = ~name, popup = ~content) %>% 
+            addLegend("bottomright",
+                      pal = color1,
+                      values = playgrounds$Status,
+                      title = "Status", opacity =1)
+    })
+    
+    # athletic facilities button
+    tennis <- subset(ath_facilities_geo, primarysport %in% c("Tennis"))
+    football <- subset(ath_facilities_geo, primarysport %in% c("Football"))
+    soccer <- subset(ath_facilities_geo, primarysport %in% c("Soccer"))
+    baseball <- subset(ath_facilities_geo, primarysport %in% c("Baseball"))
+    basketball <- subset(ath_facilities_geo, primarysport %in% c("Basketball"))
+    volleyball <- subset(ath_facilities_geo, primarysport %in% c("Volleyball"))
+    track <- subset(ath_facilities_geo, primarysport %in% c("Track"))
+
+    observe({
+        proxy <- leafletProxy("mymap", data = tennis)
+        proxy %>% clearControls()
+        
+        # clear the map
+        leafletProxy("mymap", data = tennis) %>%
+            clearShapes() %>%
+            clearMarkers() %>%
+            addProviderTiles("CartoDB.Voyager") %>%
+            fitBounds(-74.354598, 40.919500, -73.761545, 40.520024)
+        
+        if (input$atheleticfac ==1){
+            leafletProxy("mymap", data = tennis) %>%
+                addAwesomeMarkers(~longitude, ~latitude,
+                              icon = awesomeIcons(markerColor = "lightgreen",
+                                                  text = fa("users")),
+                              label = ~name, popup = ~content)
+        }
+        
+        if(input$atheleticfac ==2){
+            leafletProxy("mymap", data = football) %>%
+                addAwesomeMarkers(~longitude, ~latitude,
+                                  icon = awesomeIcons(markerColor = "lightgray",
+                                                      text = fa("football-ball")),
+                                  label = ~name, popup = ~content)
+        }
+        if(input$atheleticfac ==3){
+            leafletProxy("mymap", data = soccer) %>%
+                addAwesomeMarkers(~longitude, ~latitude,
+                                  icon = awesomeIcons(markerColor = "gray",
+                                                      text = fa("futbol")),
+                                  label = ~name, popup = ~content)
+        }
+        if(input$atheleticfac ==4){
+            leafletProxy("mymap", data = baseball) %>%
+                addAwesomeMarkers(~longitude, ~latitude,
+                                  icon = awesomeIcons(markerColor = "blue",
+                                                      text = fa("baseball-ball")),
+                                  label = ~name, popup = ~content)
+        }
+        if(input$atheleticfac ==5){
+            leafletProxy("mymap", data = basketball) %>%
+                addAwesomeMarkers(~longitude, ~latitude,
+                                  icon = awesomeIcons(markerColor = "orange",
+                                                      text = fa("basketball-ball")),
+                                  label = ~name, popup = ~content)
+        }
+        if(input$atheleticfac ==6){
+            leafletProxy("mymap", data = volleyball) %>%
+                addAwesomeMarkers(~longitude, ~latitude,
+                                  icon = awesomeIcons(markerColor = "lightgreen",
+                                                      text = fa("volleyball-ball")),
+                                  label = ~name, popup = ~content)
+        }
+        if(input$atheleticfac ==7){
+            leafletProxy("mymap", data = track) %>%
+                addAwesomeMarkers(~longitude, ~latitude,
+                                  icon = awesomeIcons(markerColor = "green",
+                                                      text = fa("running")),
+                                  label = ~name, popup = ~content)
+        }
+    })
+    
+    #dog run  button
+    observeEvent(input$dogruns, {
+        proxy <- leafletProxy("mymap", data = dog_runs_geo)
+        proxy %>% clearControls()
+        
+        # clear the map
+        leafletProxy("mymap", data = dog_runs_geo) %>%
+            clearShapes() %>%
+            clearMarkers() %>%
+            addProviderTiles("CartoDB.Voyager") %>%
+            fitBounds(-74.354598, 40.919500, -73.761545, 40.520024)
+        
+        leafletProxy("mymap", data = dog_runs_geo) %>%
+            addAwesomeMarkers(~longitude, ~latitude,
+                              icon = awesomeIcons(markerColor = "beige",
+                                                  text = fa("dog")),
+                              label = ~name, popup = ~content)
+    })
+    
+    #skate park button
+    observeEvent(input$skateparks, {
+        proxy <- leafletProxy("mymap", data = skate_parks_geo)
+        proxy %>% clearControls()
+        
+        # clear the map
+        leafletProxy("mymap", data = skate_parks_geo) %>%
+            clearShapes() %>%
+            clearMarkers() %>%
+            addProviderTiles("CartoDB.Voyager") %>%
+            fitBounds(-74.354598, 40.919500, -73.761545, 40.520024)
+        
+        leafletProxy("mymap", data = skate_parks_geo) %>%
+            addAwesomeMarkers(~longitude, ~latitude,
+                              icon = awesomeIcons(markerColor = "darkred",
+                                                  text = fa("snowboarding")),
+                              label = ~name, popup = ~content)
+    })
 })
 
 # Run the application 

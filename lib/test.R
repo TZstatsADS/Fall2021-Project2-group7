@@ -1,7 +1,7 @@
 library(shiny)
 library(tidyverse)
 library(plotly)
-
+source("data_processing.R")
 
 anti_by_boro <- read_csv("../data/anti-by-boro.csv")
 row.names(anti_by_boro) <- c("Bronx", "Brooklyn", "Manhattan", "Queens", "Staten Island")
@@ -95,15 +95,13 @@ server <- function(input, output){
     return(result)
   }
   
-  AthFacilities_reactive <- reactive({FilterPolygons(ath_facilities)})
-  DogRuns_reactive <- reactive({FilterPolygons(dog_runs)})
-  SkateParks_reactive <- reactive({FilterPolygons(skate_parks)})
+  AthFacilities_reactive <- reactive({FilterPolygons(ath_facilities_geo)})
+  DogRuns_reactive <- reactive({FilterPolygons(dog_runs_geo)})
+  SkateParks_reactive <- reactive({FilterPolygons(skate_parks_geo)})
 
   observe({
     proxy <- leafletProxy("mymap", data = df)
-    palette_testing = c("green", "red")
     
-    color1 <- colorFactor(palette=palette_testing, df$open_now)
     proxy %>% clearControls()
     
     

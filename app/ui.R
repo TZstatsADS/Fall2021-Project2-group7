@@ -184,7 +184,17 @@ shinyUI(dashboardPage(
                         actionButton("free_meal","Free Meals",icon=icon("utensils",  lib = "font-awesome")),
                         actionButton("covid_test", "Covid Testing",icon=icon("vial", lib = "font-awesome")),
                         actionButton("flu", "Seasonal Flu Vaccinations",icon=icon("map-marked-alt", lib = "font-awesome")),
+                        actionButton("playgrounds", label = "Playgrounds", value = FALSE),
+                        actionButton("adultexerciseequip", label = "Exercise Equipments", value = FALSE),
+                        actionButton("dogruns", label = "Dog Runs", value = FALSE),
+                        actionButton("skateparks", label = "Skate Parks", value = FALSE),
                         actionButton("reset", "Clear",icon=icon("fast-backward", lib = "font-awesome")),
+                        
+                        selectInput("atheleticfac", label = "Athletic Facilities",
+                                    choices =  c("Choose one"="", "Tennis"=1, "Football"=2, "Soccer"=3,
+                                                 "Baseball"=4, "Basketball"=5, "Volleyball"=6, 
+                                                 "Track"=7)),
+                        
                         leafletOutput("mymap", width="100%", height=800))
             )
             

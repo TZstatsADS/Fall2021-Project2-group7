@@ -5,9 +5,9 @@ account: jeesunyun
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4912126
-bundleId: 5156439
+bundleId: 5156483
 url: https://jeesunyun.shinyapps.io/project2_app/
-when: 1634693829.34701
-lastSyncTime: 1634693829.34703
+when: 1634694884.97153
+lastSyncTime: 1634694884.97154
 asMultiple: FALSE
 asStatic: FALSE
