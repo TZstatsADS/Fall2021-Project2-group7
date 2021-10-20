@@ -1,12 +1,11 @@
 # Project 2: Shiny App Development
 
-![screenshot](doc/figs/map.jpg)
+![screenshot](doc/figs/map.png)
 
 
-## COVID-19 Vaccine Impact on NYC
+## COVID-19 Vaccine Impact on NYC ([link to Shiny App](https://jeesunyun.shinyapps.io/project2_app/))
 Term: Fall 2021
-+ [Link to Shiny App](https://jeesunyun.shinyapps.io/project2_app/)
-+ Team #7
+Team #7
 + Team members:
 	+ Yun, Jee sun jy3112@columbia.edu
 	+ Xia, Mingyuan mx2204@columbia.edu
