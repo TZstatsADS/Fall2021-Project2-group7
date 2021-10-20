@@ -4,6 +4,14 @@ if (!require("shinydashboard")) install.packages("shinydashboard")
 library(shinydashboard)
 if (!require("plotly")) { install.packages("plotly")}
 library(plotly)
+if(!require(fontawesome)) devtools::install_github("rstudio/fontawesome")
+if(!require(highcharter)) devtools::install_github("jbkunst/highcharter")
+if(!require(leaflet)) install.packages("leaflet", repos = "http://cran.us.r-project.org")
+
+data_by_day <- read.csv("https://raw.githubusercontent.com/nychealth/coronavirus-data/master/trends/data-by-day.csv", stringsAsFactors = FALSE)
+nyc_latest <- data_by_day %>% tail(1)
+
+
 
 # Define UI for application that draws a histogram
 ui <- dashboardPage(
@@ -20,8 +28,8 @@ ui <- dashboardPage(
             menuItem("Interactive Plot", tabName = "Interac_plot", icon = icon("dashboard")),
             menuItem("Analysis", tabName = "Analysis", icon = icon("chart-bar"),
                      startExpanded = TRUE,
-                     menuSubItem("By Age/Sex",tabName = "a"),
-                     menuSubItem("By Race",tabName = "b")),
+                     menuSubItem("How Vaccine Slows Covid-19",tabName = "a"),
+                     menuSubItem("Vaccine Status of All Ages",tabName = "b")),
             menuItem("About", tabName="About", icon = icon("list-alt"))
         )
     ),
@@ -29,17 +37,18 @@ ui <- dashboardPage(
     # Body content
     dashboardBody(
         tabItems(
+            
             # Home tab content
             tabItem(tabName = "Home",
                     fluidPage(
-                        h2(strong("How Covid-19 Has Impacted New York City and People's Lives"),align = "center"),
+                        h2(strong("How Covid-19 Impacted New York City and People's Lives"),align = "center"),
                         h3("Wanxin Wang, Ziyi Wang, Mingyuan Xia, Jee sun Yun",align = "center",style="color:gray"),
                         h4("2021Fall GR5243 Project2 Group7 - M.A. Statistics at Columbia University",align = "center",style="color:gray"),
                         
-                    fluidRow(width = 20, 
+                        fluidRow(width = 20, 
                                  br(),
-                                 h3("Covid-19’s waves of destruction have inflicted their own kind of despair on humanity in the 21st century, leaving many to wonder when the pandemic will end. 
-                                 Our lives have changed drastically since New York City reported the first COVID-19 cases on March 1,2020. There will be a lot of changes that are substantial and persistent. We won’t look back and say, ‘That was a terrible time, but it’s over.’ 
+                                 h3("Covid-19 waves of destruction have inflicted their own kind of despair on humanity in the 21st century, leaving many to wonder when the pandemic will end. 
+                                 Our lives have changed drastically since New York City reported the first COVID-19 cases on March 1,2020. There will be a lot of changes that are substantial and persistent. We won't look back and say, That was a terrible time, but it's over.
                                  We will be dealing with many of the ramifications of Covid-19 for decades. 
                                  New York State has the highest numbers of confirmed cases in the United States till mid-July and most cases were in New York City where half of the population lives.", style="color:black", align = "left"),
                                  br(),
@@ -59,31 +68,33 @@ ui <- dashboardPage(
                                           br(),
                                           a(href="https://www1.nyc.gov/site/doh/covid/covid-19-vaccine-eligibility.page", "Check Eligibility",target="_blank"),style="text-align:center;color:black")),
                                  
-                                 box(width = 5, height = "10%", h2(strong("NYC Covid Updates, Resources, and Amenities Location App"),align = "center"),
+                                 box(width = 5, height = "10%", h2(strong("NYC Covid Updates, Resources, and Vaccine Situation App"),align = "center"),
                                      background = "blue",
                                      h4("Welcome to our App,
                             We want to provide New Yorkers with updated COVID-19 information and analyze how it has impacted people's lives and social environments"),
                                      br(),
                                      tags$div(
-                                         "1. Click the Map tab to understand the precautions in your target area, including free meal locations, testing sites, and open parks", 
+                                         "1. Click the Map tab to understand the precautions in your target area, including testing sites, available vaccine location, and other resources", 
                                          tags$br(),
                                          tags$br(),
                                          "2. Click the Interactive Plot tab to see how Covid cases change with respect to locatoin in NYC",
                                          tags$br(),
                                          tags$br(),
-                                         "3. Click the analysis tab to deep dive into the data by age/sex, and race."
+                                         "3. Click the analysis tab to deep dive into the data by our different residents."
                                      ) ),
                         ),
                         
                         fluidRow(
                             width = 12,
                             h2("Overall COVID-19 Case & Death",align = "center"),
-                            p("Last Updated: Aug, 2021"),
+                            p("Last Updated:  ", nyc_latest$date_of_interest),
                             valueBoxOutput("total"),
-                            valueBoxOutput("death")),
+                            valueBoxOutput("death"),
+                            valueBoxOutput("hospital_case")),
                         fluidRow(
-                            valueBoxOutput("max_case"),
-                            valueBoxOutput("max_death"),
+                            valueBoxOutput("new_case"),
+                            valueBoxOutput("newH_case"),
+                            valueBoxOutput("newD_case"),
                         )
                     )),
             
@@ -110,22 +121,14 @@ ui <- dashboardPage(
                                                                         href="https://github.com/TZstatsADS/Fall2021-Project2-group7"), ". ", align="center"))
             ),
             
+            #Interactive plot Tab content
             tabItem(tabName = "Interac_plot",
-                    box(width=5,
+                    box(width=6,
                         h4("The bar chart below shows that Brooklyn and Queens have the most positive antibody cases."),
                         h4("Please click on the select box to see more specific distribution by borough."),
                         br(),
                         
-                        # sidebarPanel(width = 2.5,
-                        #              selectInput("count","Please Select Count Type",
-                        #                          choices=c("case count","test count","percent positive", "test rate")),
-                        #              
-                        # ),
-                        
-                        # mainPanel(
-                        #     plotlyOutput(width = "150%", "int_Plot")
-                        # )
-                        
+
                         fluidPage(
                             sidebarLayout(
                                 sidebarPanel(
@@ -145,7 +148,7 @@ ui <- dashboardPage(
                         ),
                     
                     box(
-                        width=7,
+                        width=6,
                         h4("Please click on the select box to see more specific distribution of positive antibody tests number & rate."),
                         br(),
                         
@@ -157,11 +160,34 @@ ui <- dashboardPage(
                                             tabPanel("percent of test positive", plotlyOutput("plot2")))
                             )
                         ))
-                    )
+                    ),
             
             
             
-
+            #Analysis Submenu 1
+            tabItem(tabName = "a", 
+                    mainPanel(
+                        highchartOutput("case",width = "80%",height = "300px"),
+                        highchartOutput("vaccine",width = "80%",height = "300px"),
+                        highchartOutput("death_rate",width = "80%",height = "300px")
+                    )),
+            
+            #Analysis Submenu 2
+            tabItem(tabName = "b", 
+                    mainPanel(
+                        plotOutput(outputId = "plot3")
+                    )),
+            
+            # Tab2 Map  
+            tabItem(tabName = "map", 
+                    fluidPage(
+                        actionButton("free_meal","Free Meals",icon=icon("utensils",  lib = "font-awesome")),
+                        actionButton("covid_test", "Covid Testing",icon=icon("vial", lib = "font-awesome")),
+                        actionButton("flu", "Seasonal Flu Vaccinations",icon=icon("map-marked-alt", lib = "font-awesome")),
+                        actionButton("reset", "Clear",icon=icon("fast-backward", lib = "font-awesome")),
+                        leafletOutput("mymap", width="100%", height=800))
+            )
+            
 )
 )
 )
