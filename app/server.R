@@ -238,34 +238,35 @@ shinyServer(function(input, output) {
     
     
     #Covid Test data#
-    df <- readr::read_rds(file="../data/processed_data.rda") 
+    df <- readr::read_rds(file="./data/processed_data.rda")
     df = df[df$category == 'covid testing site', ]
     df = df[df$open_now == 'Open'|df$open_now == 'Closed', ]
 
     #Free Meals data#
-    free_meals = read.csv("../data/free_meals_locations.csv")    
+    free_meals = read.csv("./data/free_meals_locations.csv")    
     
     
     #Seasonal Flu Vaccine data#
-    df_flu = read.csv("../data/vaccine_locations.csv")
+    df_flu = read.csv("./data/vaccine_locations.csv")
     
     
     #Covid Test sites Button#
+
     observeEvent(input$covid_test, {
         proxy <- leafletProxy("mymap", data = df)
         palette_testing = c("red", "green")
-        
+
         color1 <- colorFactor(palette=palette_testing, df$open_now)
         proxy %>% clearControls()
-        
-        
+
+
         # clear the map
         leafletProxy("mymap", data = df) %>%
             clearShapes() %>%
                clearMarkers() %>%
                  addProviderTiles("CartoDB.Voyager") %>%
                      fitBounds(-74.354598, 40.919500, -73.761545, 40.520024)
-        
+
         # output data related to covid testing sites
             leafletProxy("mymap", data = df) %>%
                 addProviderTiles("CartoDB.Voyager") %>%
@@ -280,7 +281,7 @@ shinyServer(function(input, output) {
                 addLegend("bottomright",
                           pal = color1,
                           values = df$open_now,
-                          title = "Status",       
+                          title = "Status",
                           opacity = 1)
         })
         
@@ -340,20 +341,20 @@ shinyServer(function(input, output) {
                               icon = awesomeIcons(markerColor= "red",
                                                   text = fa("syringe")), label= ~Facility.Name,                                  
                               popup = paste(
-                                  "<b>Address:</b>", df_flu$Address,", ", df$ZIP.Code,  "<br>",
+                                  "<b>Address:</b>", df_flu$Address,", ", df_flu$ZIP.Code,  "<br>",
                                   "<b>Phone:</b>", df_flu$Phone, "<br>",
                                   "<b>Website:</b>", df_flu$Website, "<br>"))
     })        
         
   
     # parks data
-    adult_exer_equip <- readr::read_csv("../data/adultexerciseequip_clean.csv")
-    playgrounds <- readr::read_csv("../data/playgrounds_clean.csv")
+    adult_exer_equip <- readr::read_csv("./data/adultexerciseequip_clean.csv")
+    playgrounds <- readr::read_csv("./data/playgrounds_clean.csv")
 
     
-    ath_facilities_geo <- geojsonio::geojson_read("../data/atheleticfac_geo_clean.geojson", what ="sp")
-    dog_runs_geo <- geojsonio::geojson_read("../data/dogruns_geo_clean.geojson", what ="sp")
-    skate_parks_geo <- geojsonio::geojson_read("../data/skateparks_geo_clean.geojson", what ="sp")
+    ath_facilities_geo <- geojsonio::geojson_read("./data/atheleticfac_geo_clean.geojson", what ="sp")
+    dog_runs_geo <- geojsonio::geojson_read("./data/dogruns_geo_clean.geojson", what ="sp")
+    skate_parks_geo <- geojsonio::geojson_read("./data/skateparks_geo_clean.geojson", what ="sp")
     
     
     #adult exercise button
