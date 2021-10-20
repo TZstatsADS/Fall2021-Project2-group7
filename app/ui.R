@@ -14,7 +14,7 @@ nyc_latest <- data_by_day %>% tail(1)
 
 
 # Define UI for application that draws a histogram
-ui <- dashboardPage(
+shinyUI(dashboardPage(
 
     # Application title
     skin = "blue",
@@ -190,5 +190,5 @@ ui <- dashboardPage(
             
 )
 )
-)
+))
  

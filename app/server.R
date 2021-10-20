@@ -23,7 +23,7 @@ if(!require(fontawesome)) devtools::install_github("rstudio/fontawesome")
 
 
 # Define server logic required to draw a histogram
-server <- function(input, output) {
+shinyServer(function(input, output) {
     
     #Tab1 Home (Newest Covid Cases Visualization) 
     data_by_day <- read.csv("https://raw.githubusercontent.com/nychealth/coronavirus-data/master/trends/data-by-day.csv", stringsAsFactors = FALSE)
@@ -233,16 +233,16 @@ server <- function(input, output) {
     
     
     #Covid Test data#
-    df <- readRDS(file="~/GitHub/Fall2021-Project2-group7-master/data/processed_data.Rda") 
+    df <- readRDS(file="../data/processed_data.Rda") 
     df = df[df$category == 'covid testing site', ]
     df = df[df$open_now == 'Open'|df$open_now == 'Closed', ]
 
     #Free Meals data#
-    free_meals = read.csv("~/Github/Fall2021-Project2-group7-master/data/COVID-19_Free_Meals_Locations.csv")    
+    free_meals = read.csv("../data/COVID-19_Free_Meals_Locations.csv")    
     
     
     #Seasonal Flu Vaccine data#
-    df_flu = read.csv("~/Github/Fall2021-Project2-group7-master/data/vaccine_locations.csv")
+    df_flu = read.csv("../data/vaccine_locations.csv")
     
     
     #Covid Test sites Button#
@@ -341,7 +341,7 @@ server <- function(input, output) {
         
         
         
-}
+})
 
 # Run the application 
-shinyApp(ui = ui, server = server)
+#shinyApp(ui = ui, server = server)
