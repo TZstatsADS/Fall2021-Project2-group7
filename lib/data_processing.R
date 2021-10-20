@@ -1,5 +1,5 @@
 packages.used = c('stringr', 'tidytext', 'tidyverse',
-                  'plotly', 'here',
+                  'plotly', 'here', 'sf', 'tigris',
                   'geojsonio')
 
 packages.needed = setdiff(packages.used,
@@ -16,6 +16,8 @@ library(tidyverse)
 library(plotly)
 library(here)
 library(geojsonio)
+library(sf)
+library(tigris)
 
 # location data
 # polygons
@@ -114,3 +116,8 @@ geojson_write(input=skate_parks_geo, lat='latitude', lon='longitude',
            geometry='polygons', file=here::here("data", "skateparks_geo_clean.geojson"))
 geojson_write(input=ath_facilities_geo, lat='latitude', lon='longitude',
              geometry='polygons', file=here::here("data", "atheleticfac_geo_clean.geojson"))
+
+
+
+
+

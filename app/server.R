@@ -304,8 +304,7 @@ shinyServer(function(input, output) {
                 addProviderTiles("CartoDB.Voyager") %>%    
                 addCircleMarkers(~Longitude, ~Latitude, radius=10,
                                  color = ~color2(Accessibility),
-                                 label = paste(free_meals$SiteAddress, ', ', free_meals$City,', ', free_meals$Zip)
-                )%>%
+                                 label = paste(free_meals$SiteAddress, ', ', free_meals$City,', ', free_meals$Zip))%>%
                 addLegend("bottomright",
                           pal = color2,
                           values = free_meals$Accessibility,
@@ -514,6 +513,11 @@ shinyServer(function(input, output) {
                                                   text = fa("snowboarding")),
                               label = ~name, popup = ~content)
     })
+    
+
+     
+    
+    
 })
 
 # Run the application 
