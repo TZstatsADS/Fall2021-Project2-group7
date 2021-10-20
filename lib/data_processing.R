@@ -1,5 +1,5 @@
-packages.used = c('tidytext', 'tidyverse', 'DT',
-                  'htmlwidgets', 'plotly', 'RColorBrewer', 'stringr',
+packages.used = c('stringr', 'tidytext', 'tidyverse',
+                  'plotly', 'here',
                   'geojsonio')
 
 packages.needed = setdiff(packages.used,
@@ -13,29 +13,23 @@ if(length(packages.needed)>0){
 library(stringr)
 library(tidytext)
 library(tidyverse)
-library(DT)
-library(htmlwidgets)
 library(plotly)
-library(RColorBrewer)
-
+library(here)
 library(geojsonio)
-library(devtools)
 
 # location data
 # polygons
-skate_parks <- geojsonio::geojson_read("../data/skate_parks.geojson", what = 'sp')
-ath_facilities <- geojsonio::geojson_read("../data/ath_facility.geojson", what = 'sp')
-dog_runs <- geojsonio::geojson_read("../data/dog_runs.geojson", what = 'sp')
-comfort_st <- geojsonio::geojson_read("../data/comfort_stations.geojson", what = 'sp')
+skate_parks_geo<- geojsonio::geojson_read("../data/skate_parks.geojson", what = 'sp')
+ath_facilities_geo<- geojsonio::geojson_read("../data/ath_facility.geojson", what = 'sp')
+dog_runs_geo <- geojsonio::geojson_read("../data/dog_runs.geojson", what = 'sp')
 playgrounds <- read_csv("../data/playgrounds.csv")
 adult_exer_equip <- read_csv("../data/adult_exer_equip.csv")
 
 park_list <- list("adult_exer_equip" = adult_exer_equip,
      "playgrounds" = playgrounds,
-     "skate_parks" = skate_parks@data,
-     "dog_runs" = dog_runs@data,
-     "comfort_st" = comfort_st@data,
-     "ath_facilities" = ath_facilities@data
+     "skate_parks" = skate_parks_geo@data,
+     "dog_runs" = dog_runs_geo@data,
+     "ath_facilities" = ath_facilities_geo@data
      )
 
 for (i in 1:length(park_list)){
@@ -100,14 +94,23 @@ get_poly <- function(geo){
   
 park_list$playgrounds <- get_coords(park_list$playgrounds)
 park_list$adult_exer_equip <- get_coords(park_list$adult_exer_equip)
-skate_parks <- get_poly(skate_parks)
-dog_runs <- get_poly(dog_runs)
-comfort_st <- get_poly(comfort_st)
-ath_facilities <- get_poly(ath_facilities)
+
+list2env(park_list,.GlobalEnv)
+
+ath_facilities_geo@data <- ath_facilities
+dog_runs_geo@data <- dog_runs
+skate_parks_geo@data <- skate_parks
+
+skate_parks_geo <- get_poly(skate_parks_geo)
+dog_runs_geo <- get_poly(dog_runs_geo)
+ath_facilities_geo <- get_poly(ath_facilities_geo)
 
 
-
-### mapping
-
-
-
+write.csv(adult_exer_equip, file = here::here("data", "AdultExerciseEquip_clean.csv"),row.names=FALSE)
+write.csv(playgrounds, file = here::here("data", "Playgrounds_clean.csv"),row.names=FALSE)
+geojson_write(input=dog_runs_geo, lat='latitude', lon='longitude',
+            geometry='polygons', file=here::here("data", "DogRuns_geo_clean.geojson"))
+geojson_write(input=skate_parks_geo, lat='latitude', lon='longitude',
+           geometry='polygons', file=here::here("data", "SkateParks_geo_clean.geojson"))
+geojson_write(input=ath_facilities_geo, lat='latitude', lon='longitude',
+             geometry='polygons', file=here::here("data", "AtheleticFac_geo_clean.geojson"))
